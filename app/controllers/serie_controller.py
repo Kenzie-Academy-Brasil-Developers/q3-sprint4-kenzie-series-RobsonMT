@@ -39,7 +39,7 @@ def select_by_id(serie_id : int):
     try:
         serialized_serie = dict(zip(SERIE_COLUMNS, serie))
     except TypeError:
-        return {"error": f"serie with id {serie_id} not found"}, HTTPStatus.NOT_FOUND
+        return {}, HTTPStatus.NOT_FOUND
 
     return {"data": serialized_serie}, HTTPStatus.OK
 
